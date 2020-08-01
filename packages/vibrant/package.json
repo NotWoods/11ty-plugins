@@ -1,7 +1,7 @@
 {
-  "name": "eleventy-plugin-date",
+  "name": "eleventy-plugin-vibrant",
   "version": "1.0.0",
-  "description": "Dead simple Eleventy plugin for formatting dates inside your templates.",
+  "description": "Extract prominent colors from your Eleventy site's images.",
   "main": ".eleventy.js",
   "scripts": {
     "lint": "prettier **/*.js *.md *.json --write",
@@ -14,10 +14,16 @@
   "keywords": [
     "eleventy",
     "eleventy-plugin",
-    "date",
-    "iso",
-    "luxon",
-    "date-format"
+    "palette",
+    "color",
+    "detection",
+    "varation",
+    "image",
+    "picture",
+    "canvas",
+    "vibrant",
+    "muted",
+    "colour"
   ],
   "author": {
     "name": "Tiger Oakes",
@@ -26,17 +32,16 @@
   },
   "license": "MIT",
   "bugs": "https://github.com/NotWoods/11ty-plugins/issues",
-  "homepage": "https://github.com/NotWoods/11ty-plugins/tree/main/packages/date#readme",
+  "homepage": "https://github.com/NotWoods/11ty-plugins/tree/main/packages/vibrant#readme",
   "peerDependencies": {
     "@11ty/eleventy": "^0.10.0"
   },
   "dependencies": {
-    "luxon": "^1.22.0"
+    "node-vibrant": "^3.1.5"
   },
   "files": [
     ".eleventy.js",
-    "README.md",
-    "LICENSE"
+    "README.md"
   ],
   "ava": {
     "files": [
