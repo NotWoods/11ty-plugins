@@ -1,0 +1,49 @@
+{
+  "name": "eleventy-plugin-date",
+  "version": "1.0.0",
+  "description": "Dead simple Eleventy plugin for formatting dates inside your templates.",
+  "main": ".eleventy.js",
+  "scripts": {
+    "lint": "prettier **/*.js *.md *.json --write",
+    "test": "ava"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "repository": "github:NotWoods/11ty-plugins",
+  "keywords": [
+    "eleventy",
+    "eleventy-plugin",
+    "date",
+    "iso",
+    "luxon",
+    "date-format"
+  ],
+  "author": {
+    "name": "Tiger Oakes",
+    "email": "contact@tigeroakes.com",
+    "url": "https://tigeroakes.com/"
+  },
+  "license": "MIT",
+  "bugs": "https://github.com/NotWoods/11ty-plugins/issues",
+  "homepage": "https://github.com/NotWoods/11ty-plugins/tree/main/packages/date#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  },
+  "peerDependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  },
+  "dependencies": {
+    "luxon": "^1.22.0"
+  },
+  "files": [
+    ".eleventy.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "ava": {
+    "files": [
+      "!**/fixtures/**"
+    ]
+  }
+}

@@ -2,7 +2,7 @@
   "name": "@notwoods/11ty-plugins",
   "private": true,
   "scripts": {
-    "lint": "prettier scripts README.md package.json pnpm-workspace.yaml --write",
+    "lint": "prettier scripts util README.md package.json pnpm-workspace.yaml --write",
     "preinstall": "node scripts/disallow-npm.js",
     "security": "pnpm audit"
   },
