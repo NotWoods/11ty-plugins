@@ -1,4 +1,4 @@
-const pluginDate = require('../../../');
+const pluginDate = require('../../../.eleventy');
 
 /**
  * @type {import('@11ty/eleventy').LocalConfig}

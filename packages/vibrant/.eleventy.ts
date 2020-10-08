@@ -1,4 +1,5 @@
-const Vibrant = require('node-vibrant');
+import Vibrant from 'node-vibrant';
+import { AsyncFilterCallback, EleventyPlugin } from '../types';
 
 const keys = {
   vibrant: 'Vibrant',
@@ -16,7 +17,10 @@ const keys = {
  * First defined swatch is returned.
  * List is case-insensitive.
  */
-async function vibrantFilter(value, swatches) {
+async function vibrantFilter(
+  value: string,
+  swatches: string | readonly string[]
+) {
   if (typeof swatches === 'string') {
     swatches = [swatches];
   }
@@ -35,12 +39,12 @@ async function vibrantFilter(value, swatches) {
   }
 }
 
-module.exports = {
+const vibrantPlugin: EleventyPlugin = {
   initArguments: {},
   configFunction(eleventyConfig) {
     eleventyConfig.addNunjucksAsyncFilter(
       'vibrant',
-      (value, swatches, callback) => {
+      (value, swatches, callback: AsyncFilterCallback) => {
         vibrantFilter(value, swatches)
           .then((result) => callback(null, result))
           .catch((err) => callback(err));
@@ -48,3 +52,5 @@ module.exports = {
     );
   },
 };
+
+export default vibrantPlugin;

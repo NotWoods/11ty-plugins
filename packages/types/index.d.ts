@@ -6,7 +6,7 @@
 import { Options as BrowserSyncOptions } from 'browser-sync';
 import { GrayMatterOption } from 'gray-matter';
 
-export = class Eleventy {
+export default class Eleventy {
   constructor(input: string, output: string);
 
   init(): Promise<any>;
@@ -23,7 +23,7 @@ export = class Eleventy {
   setIncrementalBuild(isIncremental: boolean): void;
   setPassthroughAll(isPassthroughAll: boolean): void;
   setFormats(formats: string): void;
-};
+}
 
 export type TemplateEngineShortName =
   | 'html'
@@ -38,7 +38,7 @@ export type TemplateEngineShortName =
   | 'pug'
   | 'jstl';
 
-export type EleventyPlugin<Options> =
+export type EleventyPlugin<Options = undefined> =
   | EleventyPluginFunction<Options>
   | EleventyPluginObject<Options>;
 export type EleventyPluginFunction<Options> = (
@@ -49,6 +49,11 @@ export interface EleventyPluginObject<Options> {
   initArguments?: object;
   configFunction: EleventyPluginFunction<Options>;
 }
+
+export type AsyncFilterCallback = (
+  error: unknown | null,
+  result?: any
+) => void;
 
 export interface EleventyConfig {
   /**
@@ -96,10 +101,15 @@ export interface EleventyConfig {
   ): void;
   addNunjucksAsyncFilter(
     filterName: string,
-    filter: (
-      ...args: any[],
-      callback: (error: unknown | null, result?: string) => void
-    ) => void
+    filter: (callback: AsyncFilterCallback) => void
+  ): void;
+  addNunjucksAsyncFilter(
+    filterName: string,
+    filter: (arg: any, callback: AsyncFilterCallback) => void
+  ): void;
+  addNunjucksAsyncFilter(
+    filterName: string,
+    filter: (arg1: any, arg2: any, callback: AsyncFilterCallback) => void
   ): void;
   addHandlebarsHelper(
     filterName: string,
