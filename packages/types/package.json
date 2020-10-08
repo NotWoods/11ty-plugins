@@ -1,0 +1,40 @@
+{
+  "name": "eleventy-types",
+  "version": "1.0.0",
+  "types": "index.d.ts",
+  "scripts": {
+    "lint": "prettier **/*.ts *.md *.json --write"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "repository": "github:NotWoods/11ty-plugins",
+  "keywords": [
+    "eleventy"
+  ],
+  "author": {
+    "name": "Tiger Oakes",
+    "email": "contact@tigeroakes.com",
+    "url": "https://tigeroakes.com/"
+  },
+  "license": "MIT",
+  "bugs": "https://github.com/NotWoods/11ty-plugins/issues",
+  "homepage": "https://github.com/NotWoods/11ty-plugins/tree/main/packages/types#readme",
+  "peerDependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  },
+  "dependencies": {
+    "@types/browser-sync": "^2.26.1",
+    "gray-matter": "^4.0.2"
+  },
+  "files": [
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "ava": {
+    "files": [
+      "!**/fixtures/**"
+    ]
+  }
+}

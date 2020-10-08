@@ -1,7 +1,12 @@
 const pluginDate = require('../../../');
 
-module.exports = function (eleventyConfig) {
+/**
+ * @type {import('@11ty/eleventy').LocalConfig}
+ */
+const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(pluginDate, {
     includeDefaults: false,
   });
 };
+
+module.exports = config
