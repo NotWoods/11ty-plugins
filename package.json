@@ -2,7 +2,9 @@
   "name": "@notwoods/11ty-plugins",
   "private": true,
   "scripts": {
-    "lint": "prettier scripts util README.md package.json pnpm-workspace.yaml --write",
+    "lint:base": "prettier scripts util README.md package.json pnpm-workspace.yaml .github/**/*.yml",
+    "lint:check": "npm run lint:base -- --check",
+    "lint": "npm run lint:base -- --write",
     "preinstall": "node scripts/disallow-npm.js",
     "security": "pnpm audit"
   },
@@ -12,11 +14,12 @@
     "write-pkg": "^4.0.0"
   },
   "devDependencies": {
-    "ava": "^3.11.0",
+    "@11ty/eleventy": "^0.11.1",
+    "ava": "^3.14.0",
     "chalk": "^4.1.0",
     "execa": "^4.0.3",
-    "pnpm": "^5.4.9",
-    "prettier": "^2.0.5",
+    "pnpm": "^5.13.5",
+    "prettier": "^2.2.1",
     "yaml": "^1.10.0"
   },
   "ava": {

@@ -4,8 +4,9 @@
   "description": "Extract prominent colors from your Eleventy site's images.",
   "main": ".eleventy.js",
   "scripts": {
-    "lint": "prettier **/*.js *.md *.json --write",
-    "test": "ava"
+    "lint:base": "prettier **/*.js *.md *.json",
+    "lint:check": "npm run lint:base -- --check",
+    "lint": "npm run lint:base -- --write"
   },
   "engines": {
     "node": ">=10.0.0"

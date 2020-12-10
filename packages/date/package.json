@@ -4,7 +4,9 @@
   "description": "Dead simple Eleventy plugin for formatting dates inside your templates.",
   "main": ".eleventy.js",
   "scripts": {
-    "lint": "prettier **/*.js *.md *.json --write",
+    "lint:base": "prettier **/*.js *.md *.json",
+    "lint:check": "npm run lint:base -- --check",
+    "lint": "npm run lint:base -- --write",
     "test": "ava"
   },
   "engines": {
