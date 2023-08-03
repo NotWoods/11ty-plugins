@@ -33,7 +33,7 @@
     "@11ty/eleventy": "^0.10.0"
   },
   "dependencies": {
-    "luxon": "^1.22.0"
+    "luxon": "^1.28.1"
   },
   "files": [
     ".eleventy.js",
